@@ -11,7 +11,7 @@ class _AddScreenState extends State<AddScreen> {
   final _formKey = GlobalKey<FormState>();
   String _id = '', _name = '';
   int _score = 0 ;
-  String _gender = ''; 
+  String? _gender ; 
   final List<String> titleList = ['นาย','นางสาว'];
 
   @override
@@ -37,7 +37,7 @@ class _AddScreenState extends State<AddScreen> {
                           fontWeight: FontWeight.bold 
                       ),
                     ),
-          const SizedBox(height: 20,),
+          const SizedBox(height: 10,),
           Form(
             key: _formKey,
             child: Column(
@@ -59,7 +59,7 @@ class _AddScreenState extends State<AddScreen> {
                     _id = value.toString();
                   },
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 10,),
                 DropdownButtonFormField(
                   value: _gender,
                   style: const TextStyle(color: Colors.white),
@@ -69,7 +69,7 @@ class _AddScreenState extends State<AddScreen> {
                   items: titleList.map((item){
                     return DropdownMenuItem(
                       value: item,
-                      child: Text(item, style: const TextStyle(color: Colors.black),));
+                      child: Text(item, style: const TextStyle(color: Colors.pink),));
                   }).toList(), 
                   onChanged: (value){
                     setState(() {
@@ -83,7 +83,7 @@ class _AddScreenState extends State<AddScreen> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 10,),
                 TextFormField(
                   maxLength: 20,
                   style: const TextStyle(color: Colors.black,),
@@ -97,7 +97,7 @@ class _AddScreenState extends State<AddScreen> {
                     _name = value!;
                   },
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 10,),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   style: const TextStyle(color: Colors.black,),
