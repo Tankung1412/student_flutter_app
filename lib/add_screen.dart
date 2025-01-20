@@ -111,6 +111,13 @@ class _AddScreenState extends State<AddScreen> {
                     _score = int.parse(value.toString());
                   },
                 ),
+                const SizedBox(height: 10,),
+                FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Colors.purple.shade300
+                  ),
+                  onPressed: (){}, 
+                  child: const Text('บันทึก',style: TextStyle(color: Colors.black, fontSize: 16),))
               ],
             )
           )
